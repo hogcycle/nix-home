@@ -3,12 +3,15 @@
 {
   imports = [
     ./modules/hyprland.nix
+    ./modules/zsh.nix
     ./modules/kanshi.nix
+    ./modules/waybar.nix
   ]; 
   home.username = "nate";
   home.homeDirectory = "/home/nate";
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
+  fonts.fontconfig.enable = true; 
   home.packages = with pkgs; [
 	hyprland
 	kanshi
@@ -16,26 +19,14 @@
 	rofi	
 	clipse
 	superfile
+	btop
+	pamixer
+	brightnessctl
+	font-awesome
+	nerd-fonts.fira-code
+	nerd-fonts.jetbrains-mono
   ];
  
- gtk = {
-  enable = true;
-  theme = {
-    name = "Adwaita-dark";
-    package = pkgs.gnome-themes-extra;
-  };
-  gtk3.extraConfig = {
-    gtk-application-prefer-dark-theme = 1;
-  };
-  gtk4.extraConfig = {
-    gtk-application-prefer-dark-theme = 1;
-  };
-};
-
-qt = {
-  enable = true;
-  platformTheme.name = "gtk";
-};
   xdg.portal.enable = true; 
   xdg.portal.extraPortals = [
     pkgs.xdg-desktop-portal-gtk 
@@ -44,5 +35,6 @@ qt = {
 
   programs.kitty.enable = true; 
   programs.home-manager.enable = true;
+  services.swww.enable = true; 
 }
 
