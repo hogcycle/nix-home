@@ -8,15 +8,11 @@
       mainBar = {
         layer = "top";
         position = "top";
-        # mode = "dock";
         exclusive = true;
         passthrough = false;
         height = 20;
-        gtk-layer-shell = true;
 
         modules-left = [
-          "custom/launcher"
-          "custom/divider"
           "cpu"
           "custom/divider"
           "memory"
@@ -29,8 +25,6 @@
         modules-center = [ "clock" ];
         
         modules-right = [
-          "custom/updates"
-          "custom/divider"
           "backlight"
           "custom/divider"
           "pulseaudio"
@@ -38,7 +32,7 @@
           "tray"
           "custom/divider"
           "custom/clipboard"
-        ];
+       ];
 
         clock = {
           tooltip = false;
@@ -52,14 +46,14 @@
 
         cpu = {
           interval = 30;
-          format = "  {}%";
+          format = "  {}%";
           max-length = 10;
           on-click = "kitty -e btop";
         };
 
         memory = {
           interval = 1;
-          format = " {}%";
+          format = " {}%";
           max-length = 30;
         };
 
@@ -67,12 +61,12 @@
           interval = 100;
           interface = "wlp0s20f3";
           format = "{ifname}";
-          format-wifi = "  ({signalStrength}%) ";
-          format-ethernet = " {ipaddr}/{cidr} ";
+          format-wifi = "  ({signalStrength}%) ";
+          format-ethernet = " {ipaddr}/{cidr} ";
           format-disconnected = "Disconnected "; # An empty format will hide the module
-          tooltip-format = "{ifname} via {gwaddr}";
-          tooltip-format-wifi = " {essid} ({signalStrength}%)";
-          tooltip-format-ethernet = " {ifname}";
+          tooltip-format = " {ifname} via {gwaddr}";
+          tooltip-format-wifi = " {essid} ({signalStrength}%)";
+          tooltip-format-ethernet = "  {ifname}";
           tooltip-format-disconnected = "Disconnected";
           max-length = 50;
           exec = "kitty -e nmcli dev wifi ";
@@ -81,7 +75,7 @@
 
 
         "custom/clipboard" = {
-          format = "";
+          format = "";
           on-click = "kitty --class clipse -e 'clipse'";
         };
 
@@ -97,19 +91,19 @@
         pulseaudio = {
           format = "{icon} {volume}%";
           tooltip = false;
-          format-muted = " Muted";
+          format-muted = " Muted";
           on-click = "pamixer -t";
           on-scroll-up = "pamixer -i 5";
           on-scroll-down = "pamixer -d 5";
           scroll-step = 5;
           format-icons = {
-            headphone = "";
-            hands-free = "";
-            headset = "";
-            phone = "";
-            portable = "";
-            car = "";
-            default = [ "" "" "" ];
+            headphone = "";
+            hands-free = "";
+            headset = "";
+            phone = "";
+            portable = "";
+            car = "";
+            default = [ "" "" "" ];
           };
         };
 
@@ -119,11 +113,12 @@
             warning = 30;
             critical = 20;
           };
+       #   format: "<span font='JetBrainsMono Nerd Font'> {capacity}%</span>"
           format = "{icon}  {capacity}% ";
           format-charging = " {capacity}% ";
           format-plugged = " {capacity}% ";
           format-alt = "{time} {icon} ";
-          format-icons = [ "" "" "" "" "" ];
+          format-icons = ["" "" "" "" ""];
         };
 
         tray = {
@@ -139,14 +134,14 @@
           tooltip = false;
           format = "{icon}";
           format-icons = {
-            notification = "<span foreground='red'><sup></sup></span>";
-            none = "";
-            dnd-notification = "<span foreground='red'><sup></sup></span>";
-            dnd-none = "";
-            inhibited-notification = "<span foreground='red'><sup></sup></span>";
-            inhibited-none = "";
-            dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
-            dnd-inhibited-none = "";
+            notification = "<span foreground='red'><sup></sup></span>";
+            none = "";
+            dnd-notification = "<span foreground='red'><sup></sup></span>";
+            dnd-none = "";
+            inhibited-notification = "<span foreground='red'><sup></sup></span>";
+            inhibited-none = "";
+            dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
+            dnd-inhibited-none = "";
           };
           return-type = "json";
           exec-if = "which swaync-client";
