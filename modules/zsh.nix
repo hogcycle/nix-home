@@ -2,8 +2,8 @@
 
   programs.zsh = {
     enable = true; 
-    sessionVariables = { 
-	EDITOR = "neovim"; 
-    }; 
+  }; 
+  programs.starship = { 
+    enable = true; 
   }; 
 }
