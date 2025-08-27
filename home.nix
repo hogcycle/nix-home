@@ -3,8 +3,8 @@
 {
   imports = [
     ./modules/hyprland.nix
-    ./kanshi.nix
-  ]
+    ./modules/kanshi.nix
+  ]; 
   home.username = "nate";
   home.homeDirectory = "/home/nate";
   home.stateVersion = "25.05"; # Please read the comment before changing.
@@ -14,6 +14,7 @@
 	kanshi
 	kitty
 	rofi	
+	clipse
 	superfile
   ];
  
