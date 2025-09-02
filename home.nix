@@ -8,6 +8,7 @@
     ./modules/waybar.nix
     ./modules/rofi.nix
     ./modules/kitty.nix
+    ./modules/superfile.nix
   ]; 
   home.username = "nate";
   home.homeDirectory = "/home/nate";
@@ -18,7 +19,6 @@
 	hyprland
 	kanshi
 	clipse
-	superfile
 	btop
 	pamixer
 	brightnessctl
