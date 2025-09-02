@@ -6,6 +6,8 @@
     ./modules/zsh.nix
     ./modules/kanshi.nix
     ./modules/waybar.nix
+    ./modules/rofi.nix
+    ./modules/kitty.nix
   ]; 
   home.username = "nate";
   home.homeDirectory = "/home/nate";
@@ -15,8 +17,6 @@
   home.packages = with pkgs; [
 	hyprland
 	kanshi
-	kitty
-	rofi	
 	clipse
 	superfile
 	btop
@@ -25,6 +25,7 @@
 	font-awesome
 	nerd-fonts.fira-code
 	nerd-fonts.jetbrains-mono
+	calcure
   ];
  
   xdg.portal.enable = true; 
@@ -32,8 +33,6 @@
     pkgs.xdg-desktop-portal-gtk 
     pkgs.xdg-desktop-portal-hyprland
   ]; 
-
-  programs.kitty.enable = true; 
   programs.home-manager.enable = true;
   services.swww.enable = true; 
 }
