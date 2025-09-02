@@ -13,7 +13,7 @@
   home.username = "nate";
   home.homeDirectory = "/home/nate";
   home.stateVersion = "25.05"; # Please read the comment before changing.
-
+  services.ssh-agent.enable = true; 
   fonts.fontconfig.enable = true; 
   home.packages = with pkgs; [
 	hyprland

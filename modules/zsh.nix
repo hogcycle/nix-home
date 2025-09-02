@@ -1,19 +1,12 @@
-{ ... }: {
-
+{ ... }: 
+{
   programs.zsh = {
     enable = true; 
-    initExtra = ''
-	export EDITOR="nvim"
-
-	function vim() {
-	    if [ -z "$@" ]; then
-		nvim .
-	    else
-		nvim $@
-	    fi
-	}
-    ''; 
-  };
+    shellAliases = { 
+      vim = "nvim";
+    };
+    initContent = "ssh-add ~/.ssh/github 2>/dev/null || true"; 
+  }; 
   programs.starship = { 
     enable = true; 
   }; 
