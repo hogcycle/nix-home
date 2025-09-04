@@ -12,11 +12,13 @@
   ]; 
   home.username = "nate";
   home.homeDirectory = "/home/nate";
-  home.stateVersion = "25.05"; # Please read the comment before changing.
-  services.ssh-agent.enable = true; 
-  fonts.fontconfig.enable = true; 
   home.packages = with pkgs; [
 	hyprland
+	hyprlock
+	swww
+	dunst
+	libnotify
+	swaynotificationcenter
 	kanshi
 	clipse
 	btop
@@ -26,8 +28,23 @@
 	nerd-fonts.fira-code
 	nerd-fonts.jetbrains-mono
 	calcure
+	firefox
+	thunderbird
+	neovim
+	discord
+	plex-desktop
+	vscode
+	ffmpeg
+	nodejs
+	obsidian
+	wl-clipboard
+	(flameshot.override { enableWlrSupport = true; })
   ];
- 
+  home.sessionVariables = { 
+    GTK_THEME = "Adwaita:dark"; 
+    NIXOS_OZONE_WL = "1"; 
+  };
+  # -- Programs and services -- 
   xdg.portal.enable = true; 
   xdg.portal.extraPortals = [
     pkgs.xdg-desktop-portal-gtk 
@@ -35,5 +52,10 @@
   ]; 
   programs.home-manager.enable = true;
   services.swww.enable = true; 
+  services.ssh-agent.enable = true; 
+  fonts.fontconfig.enable = true; 
+ 
+
+  home.stateVersion = "25.05"; 
 }
 
