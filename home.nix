@@ -33,6 +33,7 @@
 	neovim
 	discord
 	plex-desktop
+	plexamp
 	vscode
 	ffmpeg
 	nodejs
