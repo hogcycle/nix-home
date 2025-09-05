@@ -39,7 +39,10 @@
 	nodejs
 	obsidian
 	wl-clipboard
+	networkmanagerapplet
 	(flameshot.override { enableWlrSupport = true; })
+	unzip
+	rustc
   ];
   home.sessionVariables = { 
     GTK_THEME = "Adwaita:dark"; 
