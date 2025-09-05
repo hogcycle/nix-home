@@ -54,6 +54,7 @@
 	nerd-fonts.fira-code
 	noto-fonts-color-emoji
 	liberation_ttf
+	jigmo # kanji
       ]; 
   }; 
   xdg.portal = {
@@ -86,7 +87,6 @@
 
   networking.hostName = "x1nano"; # Define your hostname.
   networking.networkmanager.enable = true;  
-
   time.timeZone = "America/New_York";
   services.tailscale.enable = true; 
   users.users.nate = {
