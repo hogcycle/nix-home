@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
@@ -30,7 +30,6 @@
 	calcure
 	firefox
 	thunderbird
-	neovim
 	discord
 	plex-desktop
 	plexamp
@@ -55,6 +54,11 @@
     pkgs.xdg-desktop-portal-hyprland
   ]; 
   programs.home-manager.enable = true;
+  programs.neovim = { 
+    enable = true; 
+    extraConfig = lib.fileContents ./nvim/init.vim; 
+    vimAlias = true; 
+  }; 
   services.swww.enable = true; 
   services.ssh-agent.enable = true; 
   fonts.fontconfig.enable = true; 
