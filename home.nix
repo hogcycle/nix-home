@@ -42,6 +42,8 @@
 	(flameshot.override { enableWlrSupport = true; })
 	unzip
 	rustc
+	cargo
+	gcc
   ];
   home.sessionVariables = { 
     GTK_THEME = "Adwaita:dark"; 
