@@ -1,37 +1,36 @@
 { pkgs, ... }: {
-  services.kanshi = { 
-	enable = true;  
-	systemdTarget = "hyprland-session.target"; 
-	settings = [
-	  {
-	      profile.name = "docked";
-	      profile.outputs = [
-	      	{
-		criteria = "eDP-1"; 
-		status = "disable";
-		} 
-		{
-		criteria = "DP-8"; 
-		status = "enable"; 
-		} 
-	      ]; 
-	      # profile.exec = "[ ${pkgs.bash}/bin/bash /home/nate/.config/home-manager/hypr/dock.sh ]"; 
-	  } 
-	  {
-	      profile.name = "undocked";
-	      profile.outputs = [
-                  { 
-		  criteria = "eDP-1";
-		  status = "enable"; 
-		  } 
-		  {
-		  criteria = "DP-8"; 
-		  status = "disable"; 
-		  position = "0,0";  
-		  } 
-	      ]; 
-	      # profile.exec = "[ ${pkgs.bash}/bin/bash /home/nate/.config/home-manager/hypr/undock.sh ]"; 
-	  } 
-	]; 
-    };
-  }	
+  xdg.configFile = { 
+	"hypr/docked.sh".source = ./hypr/docked.sh; 
+	"hypr/undocked.sh".source = ./hypr/docked.sh; 
+  }; 
+  services.kanshi = {
+  enable = true;
+  systemdTarget = "hyprland-session.target"; 
+  profiles = { 
+  	undocked = { 
+  		exec = [ "${pkgs.bash}/bin/bash /home/nate/.config/hypr/undocked.sh" ]; 
+  		outputs = [
+  		{
+  			criteria = "eDP-1"; 
+  			status = "enable"; 
+  			mode = "2160x1350@59.74400Hz";
+  		}
+  		]; 
+  	}; 
+  	docked = {
+  		exec = [ "${pkgs.bash}/bin/bash /home/nate/.config/hypr/docked.sh" ]; 
+  		outputs = [
+  		{
+  		#	criteria = "Sceptre Tech Inc Sceptre Z27 Unknown"; 
+  			criteria = "DP-8";
+  			status = "enable"; 
+  		}
+  		{
+  			criteria = "eDP-1"; 
+  			status = "disable"; 
+  		} 
+  		]; 
+  	};
+   };
+}; 
+

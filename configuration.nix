@@ -32,6 +32,7 @@
 	wget
 	acpi
 	curl
+	jq
   ]; 
   environment.sessionVariables = { 
 	GTK_THEME = "Adwaita:dark"; 
