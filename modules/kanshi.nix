@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   xdg.configFile = { 
-	"hypr/docked.sh".source = ./hypr/docked.sh; 
-	"hypr/undocked.sh".source = ./hypr/docked.sh; 
+	"hypr/docked.sh".source = ../hypr/docked.sh; 
+	"hypr/undocked.sh".source = ../hypr/undocked.sh; 
   }; 
   services.kanshi = {
   enable = true;
@@ -30,7 +30,7 @@
   			status = "disable"; 
   		} 
   		]; 
-  	};
-   };
-}; 
-
+    };
+  };
+ }; 
+}
