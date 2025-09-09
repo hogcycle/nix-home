@@ -17,12 +17,26 @@
   		}
   		]; 
   	}; 
-  	docked = {
+  	docked1 = {
   		exec = [ "${pkgs.bash}/bin/bash /home/nate/.config/hypr/docked.sh" ]; 
   		outputs = [
   		{
-  		#	criteria = "Sceptre Tech Inc Sceptre Z27 Unknown"; 
+  			#criteria = "Sceptre Tech Inc Sceptre Z27 "; 
   			criteria = "DP-8";
+  			status = "enable"; 
+  		}
+  		{
+  			criteria = "eDP-1"; 
+  			status = "disable"; 
+  		} 
+  		]; 
+    };
+  	docked2 = {
+  		exec = [ "${pkgs.bash}/bin/bash /home/nate/.config/hypr/docked.sh" ]; 
+  		outputs = [
+  		{
+  			#criteria = "Sceptre Tech Inc Sceptre Z27 "; 
+  			criteria = "DP-7";
   			status = "enable"; 
   		}
   		{
