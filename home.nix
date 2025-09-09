@@ -44,6 +44,8 @@
 	rustc
 	cargo
 	gcc
+	gnupg
+	pinentry-tty
   ];
   home.sessionVariables = { 
     GTK_THEME = "Adwaita:dark"; 
@@ -64,8 +66,8 @@
   services.swww.enable = true; 
   services.ssh-agent.enable = true; 
   fonts.fontconfig.enable = true; 
- 
 
+ 
   home.stateVersion = "25.05"; 
 }
 
