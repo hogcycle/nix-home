@@ -44,8 +44,8 @@
 	rustc
 	cargo
 	gcc
-	gnupg
-	pinentry-tty
+	wine
+	winetricks
   ];
   home.sessionVariables = { 
     GTK_THEME = "Adwaita:dark"; 
