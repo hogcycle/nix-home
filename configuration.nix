@@ -34,6 +34,8 @@
 	acpi
 	curl
 	jq
+	qemu
+	quickemu
   ]; 
   environment.sessionVariables = { 
 	GTK_THEME = "Adwaita:dark"; 
