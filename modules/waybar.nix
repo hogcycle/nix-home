@@ -27,6 +27,8 @@
         modules-right = [
           "backlight"
           "custom/divider"
+		  "custom/notification"
+          "custom/divider"
           "pulseaudio"
           "custom/divider"
           "tray"
@@ -81,6 +83,7 @@
 
         backlight = {
           device = "intel_backlight";
+		  exec-if = "hyprctl monitors -j | jq -e '.[] | select(.name == \"eDP-1\")' > /dev/null"; 
           format = "{icon} {percent}%";
           format-icons = [ "󰃞" "󰃟" "󰃠" ];
           on-scroll-up = "brightnessctl set 1%+";
@@ -115,8 +118,8 @@
           };
        #   format: "<span font='JetBrainsMono Nerd Font'> {capacity}%</span>"
           format = "{icon}  {capacity}% ";
-          format-charging = " {capacity}% ";
-          format-plugged = " {capacity}% ";
+          format-charging = "󰂄 {capacity}% ";
+          format-plugged = "󰂄 {capacity}% ";
           format-alt = "{time} {icon} ";
           format-icons = ["" "" "" "" ""];
         };
