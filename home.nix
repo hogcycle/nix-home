@@ -41,11 +41,9 @@
 	networkmanagerapplet
 	(flameshot.override { enableWlrSupport = true; })
 	unzip
-	rustc
-	cargo
-	gcc
-	wine
-	winetricks
+	polychromatic
+	kdePackages.gwenview
+	nicotine-plus
   ];
   home.sessionVariables = { 
     GTK_THEME = "Adwaita:dark"; 
