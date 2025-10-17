@@ -36,6 +36,7 @@
 	jq
 	qemu
 	quickemu
+	openrazer-daemon
   ]; 
   environment.sessionVariables = { 
 	GTK_THEME = "Adwaita:dark"; 
@@ -43,6 +44,7 @@
   };  
   hardware = { 
 	graphics.enable = true; 
+	openrazer.enable = true; 
   };
   fonts = {
       fontconfig = {
@@ -95,7 +97,7 @@
   services.tailscale.enable = true; 
   users.users.nate = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user
+    extraGroups = [ "wheel" "openrazer" ]; 
     shell = pkgs.zsh; 
   };
   hardware.bluetooth = { 
