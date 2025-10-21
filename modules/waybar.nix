@@ -16,6 +16,8 @@
           "cpu"
           "custom/divider"
           "memory"
+		  "custom/divider"
+		  "temperature"
           "custom/divider"
           "network"
           "custom/divider"
@@ -75,6 +77,17 @@
           on-click = "iwmenu -l rofi&";
         };
 
+	  temperature = { 
+  		 thermal-zone = 4;
+		 critical-threshold = 80;
+		 interval = 2;
+		 format = "{icon} {temperatureC}°C";
+		 format-critical = "󱒔 {temperatureC}°C";
+		 format-icons = ["󱃃" "󰔏" "󱃂" "󰸁" "󱃂"];
+		 tooltip = true; 
+		 tooltip-format = "Temperature: {temperatureC}°C ({temperatureF}°F)";
+		 on-click = "kitty -e watch -n 1 sensors";
+        }; 
 
         "custom/clipboard" = {
           format = "";
