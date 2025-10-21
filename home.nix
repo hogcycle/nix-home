@@ -39,7 +39,8 @@
 	obsidian
 	wl-clipboard
 	networkmanagerapplet
-	(flameshot.override { enableWlrSupport = true; })
+	grim
+	slurp
 	unzip
 	polychromatic
 	kdePackages.gwenview
